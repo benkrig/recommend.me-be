@@ -1,0 +1,13 @@
+language: python
+python:
+- "3.6"
+
+deploy:
+  provider: lambda
+  function_name: "recommendmeFE"
+  region: "us-east-2"
+  role: "arn:aws:iam::0123456789012:role/lambda_basic_execution"
+  runtime: "python3.6"
+  handler_name: "lambda.universal"
+  on:
+    branch: cit
