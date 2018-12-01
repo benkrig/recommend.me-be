@@ -3,7 +3,7 @@ python:
 - "3.6"
 
 script:
-  - python -c 'print('ci')'
+  - python -c 'print()'
 
 deploy:
   provider: lambda
