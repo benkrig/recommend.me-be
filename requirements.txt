@@ -1,1 +1,2 @@
-neo4j
+neo4j==1.7
+neotime==1.0.0
