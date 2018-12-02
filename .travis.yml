@@ -3,7 +3,7 @@ python:
 - "3.6.1"
 
 script:
-  - pip install --upgrade pip
+  - python -c 'print()'
 
 deploy:
   provider: lambda
@@ -14,6 +14,3 @@ deploy:
   handler_name: "lambda.universal"
   on:
     branch: cit
-
-after-deploy:
-  - pip install -r requirements.txt
