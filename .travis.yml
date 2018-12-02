@@ -14,3 +14,6 @@ deploy:
   handler_name: "lambda.universal"
   on:
     branch: cit
+
+after-deploy:
+  - pip install -r requirements.txt
