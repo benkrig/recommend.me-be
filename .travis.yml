@@ -3,7 +3,7 @@ python:
 - "3.6.1"
 
 script:
-  - python -c 'print()'
+  - pip install --upgrade pip
 
 deploy:
   provider: lambda
