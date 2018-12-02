@@ -9,7 +9,7 @@ deploy:
   provider: lambda
   function_name: "recommendmeFE"
   region: "us-east-2"
-  role: "arn:aws:iam::0123456789012:role/lambda_basic_execution"
+  role: "arn:aws:iam::403180008823:user/RecommendMe"
   runtime: "python3.6"
   handler_name: "lambda.universal"
   on:
