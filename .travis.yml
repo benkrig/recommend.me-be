@@ -11,7 +11,8 @@ deploy:
   region: "us-east-2"
   role: "arn:aws:iam::627490492245:role/service-role/testLambdaRole"
   runtime: "python3.6"
-  handler_name: "lambda.universal"
+  handler_name: "universal"
+  module_name: "lambda"
   on:
     branch: cit
 

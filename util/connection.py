@@ -1,5 +1,5 @@
 import os
-from neo4j.v1 import GraphDatabase, basic_auth
+from neo4j import GraphDatabase, basic_auth
 
 password = os.getenv("DB_USER", "root")
 driver = GraphDatabase.driver('bolt://localhost',
