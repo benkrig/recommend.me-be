@@ -3,10 +3,12 @@ python:
 - "3.6.1"
 node_js:
 - "10.3.0"
+sudo: true
+
 
 
 script:
-  - npm install serverless
+  - npm install -g serverless
 
 deploy:
   skip_cleanup: true
