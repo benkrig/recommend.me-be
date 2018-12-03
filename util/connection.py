@@ -1,9 +1,11 @@
 import os
 from neo4j import GraphDatabase, basic_auth
 
-password = os.getenv("DB_USER", "root")
-driver = GraphDatabase.driver('bolt://localhost',
-                              auth=basic_auth("neo4j", password))
+db_pass = os.getenv("DB_PASS", "root")
+db_url = os.getenv("DB_URL", "bolt://localhost")
+
+driver = GraphDatabase.driver(db_url,
+                              auth=basic_auth("neo4j", db_pass))
 
 
 class Neo4jConnection:
