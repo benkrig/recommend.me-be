@@ -4,14 +4,12 @@ python:
 
 script:
   - pip install -r requirements.txt
-
 deploy:
-  skip_cleanup: true
-  provider: script
-  script: serverless deploy
-
-
-
-
+  provider: lambda
+  function_name: "recommendmeFE"
+  region: "us-east-2"
+  role: "arn:aws:iam::627490492245:role/service-role/testLambdaRole"
+  runtime: "python3.6"
+  handler_name: "lambda.universal"
   on:
     branch: cit
