@@ -1,0 +1,11 @@
+# serverless.yml
+
+service: recommendmeFE
+
+provider:
+  name: aws
+  runtime: python3.6
+
+functions:
+  numpy:
+    handler: lambda.universal
