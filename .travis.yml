@@ -1,9 +1,12 @@
 language: python
 python:
 - "3.6.1"
+node_js:
+- "10.3.0"
+
 
 script:
-  - pip install -r requirements.txt
+  - npm install serverless
 
 deploy:
   skip_cleanup: true
