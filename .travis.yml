@@ -9,6 +9,7 @@ sudo: true
 
 script:
   - npm install -g serverless
+  - npm install -g serverless-python-requirements
 
 deploy:
   skip_cleanup: true
