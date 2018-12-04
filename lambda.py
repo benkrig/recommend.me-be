@@ -8,7 +8,6 @@ logging.basicConfig(level=logging.INFO)
 
 def universal(event, context):
     logging.info('Received event: {}'.format(json.dumps(event, indent=2)))
-    logging.info('Received context: {}'.format(json.dumps(context, indent=2)))
 
     payload = {
         'q': event.get('queryStringParameters'),
