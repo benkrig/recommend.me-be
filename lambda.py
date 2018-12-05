@@ -13,12 +13,22 @@ def universal(event, context):
         }
 
         if event['path'] in endpoints:
-            return endpoints[event['path']](payload)
+            return {
+                'statusCode': 200,
+                'body': endpoints[event['path']](payload)
+            }
         else:
             raise ValueError('Unrecognized endpoint "{}"'.format(event['path']))
     except Exception as e:
         logger.info(e)
-        return {'asd': 'asd'}
+        return {
+            'statusCode': 200,
+            'body': {
+                'message': 'Error',
+                'exception': e
+            }
+        }
+
 
 if __name__ == "__main__":
     ev = {
