@@ -17,10 +17,8 @@ def universal(event, context):
         else:
             raise ValueError('Unrecognized endpoint "{}"'.format(event['path']))
     except Exception as e:
-        print(e)
-        logger.error(e)
-        return e
-
+        logger.info(e)
+        return {'asd': 'asd'}
 
 if __name__ == "__main__":
     ev = {
