@@ -2,7 +2,11 @@ from util.logs import logger
 from util.connection import Neo4jConnection
 from json import *
 
+# Search movies query
 s_movies = "MATCH (movie:Movie) WHERE movie.title =~ {title} RETURN movie"
+
+# TODO: Search actors query
+s_actors = None
 
 
 def search(q):
@@ -29,3 +33,8 @@ def serialize_movie(movie):
         'rated': movie['rated'],
         'tagline': movie['tagline']
     }
+
+
+# TODO: serialize_actor
+def serialize_actor(actor):
+    return {}
