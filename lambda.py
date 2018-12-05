@@ -1,14 +1,11 @@
 import json
-import logging
-
-from util.endpoints import endpoints, prefix
-
-logging.basicConfig(level=logging.INFO)
+from util.logs import logger
+from util.endpoints import endpoints
 
 
 def universal(event, context):
     try:
-        logging.info('Received event: {}'.format(json.dumps(event, indent=2)))
+        logger.info('Received event: {}'.format(json.dumps(event, indent=2)))
 
         payload = {
             'q': event.get('queryStringParameters'),
@@ -21,7 +18,7 @@ def universal(event, context):
             raise ValueError('Unrecognized endpoint "{}"'.format(event['path']))
     except Exception as e:
         print(e)
-        logging.error(e)
+        logger.error(e)
         return e
 
 

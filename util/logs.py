@@ -1,5 +1,16 @@
-FORMAT = '%(asctime)-15s %(clientip)s %(user)-8s %(message)s'
-logging.basicConfig(format=FORMAT)
-d = {'clientip': '192.168.0.1', 'user': 'fbloggs'}
-logger = logging.getLogger('tcpserver')
-logger.warning('Protocol problem: %s', 'connection reset', extra=d)
+import logging
+
+logger = logging.getLogger()
+logger.setLevel(logging.INFO)
+
+
+def info(msg):
+    logger.info(msg)
+
+
+def error(msg):
+    logger.error(msg)
+
+
+def debug(msg):
+    logger.debug(msg)

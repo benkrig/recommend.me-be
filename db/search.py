@@ -1,5 +1,4 @@
-import logging
-
+from util.logs import logger
 from util.connection import Neo4jConnection
 from json import *
 
@@ -15,7 +14,7 @@ def search(q):
 
         return dumps([serialize_movie(record['movie']) for record in results])
     except Exception as e:
-        logging.error(e)
+        logger.error(e)
         raise
     finally:
         Neo4jConnection().close_db()
