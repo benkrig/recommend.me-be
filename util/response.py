@@ -32,5 +32,8 @@ def generate_error():
         'statusCode': 500,
         'body': json.dumps({
             'message': 'There was a problem servicing the request.'
-        })
+        }),
+        'headers': {
+            'Content-Type': 'application/json'
+        }
     }

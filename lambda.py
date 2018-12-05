@@ -25,7 +25,7 @@ def universal(event, context):
 
 if __name__ == "__main__":
     ev = {
-        'path': '/recommendmeFE-dev-univerasdsal',
+        'path': '/recommendmeFE-dev-universal/',
         'queryStringParameters': {
             'q': 'asd'
         }
