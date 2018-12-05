@@ -1,8 +1,8 @@
 import os
 from neo4j import GraphDatabase, basic_auth
 
-db_pass = os.getenv("DB_PASS", "root")
-db_url = os.getenv("DB_URL", "bolt://localhost")
+db_pass = os.getenv("DB_PASS", "b.2ZeVO4IEjGHA.IyNw24ViPXB1dx0q")
+db_url = os.getenv("DB_URL", "bolt://hobby-ebkjiiillfimgbkejcngngcl.dbs.graphenedb.com:24786")
 
 driver = GraphDatabase.driver(db_url,
                               auth=basic_auth("neo4j", db_pass))

@@ -8,9 +8,8 @@ s_movies = "MATCH (movie:Movie) WHERE movie.title =~ {title} RETURN movie"
 def search(q):
     try:
         conn = Neo4jConnection().get_db()
-        print(conn)
 
-        results = conn.run(s_movies, {"title": "(?i).*" + q['q'] + ".*"})
+        results = conn.run(s_movies, {"title": "(?i).*" + q + ".*"})
 
         return dumps([serialize_movie(record['movie']) for record in results])
     except Exception as e:
