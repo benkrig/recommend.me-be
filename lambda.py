@@ -1,7 +1,7 @@
 import json
 import logging
 
-from util.endpoints import endpoints
+from util.endpoints import endpoints, prefix
 
 logging.basicConfig(level=logging.INFO)
 
@@ -22,7 +22,7 @@ def universal(event, context):
 
 if __name__ == "__main__":
     e = {
-        'path': '/',
+        'path': '/recommendmeFE-dev-universal',
         'queryStringParameters': {
             'q': 'asd'
         }
