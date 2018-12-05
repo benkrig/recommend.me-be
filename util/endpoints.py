@@ -4,7 +4,7 @@ from db.default import default
 prefix = '/recommendmeFE-dev-universal'
 
 endpoints = {
-    prefix + '/search': lambda payload: search(payload['q']),
-    prefix + '/': lambda payload: default(),
-    prefix + '': lambda payload: default()
+    '/search': lambda payload: search(payload['q']),
+    '/': lambda payload: default(),
+    '': lambda payload: default()
 }
