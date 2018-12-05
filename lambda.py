@@ -1,6 +1,7 @@
 import json
 from util.logs import logger
 from util.endpoints import endpoints
+from util.response import generate_response, generate_error
 
 
 def universal(event, context):
@@ -13,21 +14,13 @@ def universal(event, context):
         }
 
         if event['path'] in endpoints:
-            return {
-                'statusCode': 200,
-                'body': endpoints[event['path']](payload)
-            }
+
+            return generate_response(endpoints[event['path']](payload))
         else:
             raise ValueError('Unrecognized endpoint "{}"'.format(event['path']))
     except Exception as e:
         logger.info(e)
-        return {
-            'statusCode': 200,
-            'body': {
-                'message': 'Error',
-                'exception': e
-            }
-        }
+        return generate_error()
 
 
 if __name__ == "__main__":
