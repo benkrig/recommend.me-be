@@ -21,6 +21,7 @@ class Neo4jConnection:
 
     def close_db(self):
         self.__shared_state['db'].close()
+        self.__shared_state.pop('db')
 
     def _connect(self):
         return driver.session()
