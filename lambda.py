@@ -7,25 +7,29 @@ logging.basicConfig(level=logging.INFO)
 
 
 def universal(event, context):
-    logging.info('Received event: {}'.format(json.dumps(event, indent=2)))
+    try:
+        logging.info('Received event: {}'.format(json.dumps(event, indent=2)))
 
-    payload = {
-        'q': event.get('queryStringParameters'),
-        'b': event.get('body')
-    }
+        payload = {
+            'q': event.get('queryStringParameters'),
+            'b': event.get('body')
+        }
 
-    if event['path'] in endpoints:
-        return endpoints[event['path']](payload)
-    else:
-        raise ValueError('Unrecognized endpoint "{}"'.format(event['path']))
+        if event['path'] in endpoints:
+            return endpoints[event['path']](payload)
+        else:
+            raise ValueError('Unrecognized endpoint "{}"'.format(event['path']))
+    except Exception as e:
+        logging.error(e)
+        return e
 
 
 if __name__ == "__main__":
-    e = {
+    ev = {
         'path': '/recommendmeFE-dev-universal',
         'queryStringParameters': {
             'q': 'asd'
         }
     }
-    res = universal(e, None)
+    res = universal(ev, None)
     print(res)
