@@ -20,13 +20,14 @@ def universal(event, context):
         else:
             raise ValueError('Unrecognized endpoint "{}"'.format(event['path']))
     except Exception as e:
+        print(e)
         logging.error(e)
         return e
 
 
 if __name__ == "__main__":
     ev = {
-        'path': '/recommendmeFE-dev-universal',
+        'path': '/recommendmeFE-dev-univerasdsal',
         'queryStringParameters': {
             'q': 'asd'
         }
