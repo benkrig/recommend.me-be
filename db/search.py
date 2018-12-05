@@ -13,9 +13,14 @@ def search(q):
     try:
         conn = Neo4jConnection().get_db()
 
-        results = conn.run(s_movies, {"title": "(?i).*" + q + ".*"})
+        movies = conn.run(s_movies, {"title": "(?i).*" + q + ".*"})
 
-        return dumps([serialize_movie(record['movie']) for record in results])
+        results = {
+            "movies": [serialize_movie(movie['movie']) for movie in movies],
+            "actors": []
+        }
+
+        return dumps(results)
     except Exception as e:
         logger.error(e)
         raise
