@@ -23,7 +23,7 @@ def universal(event, context):
 if __name__ == "__main__":
     ev = {
         'path': '/search',
-        "queryStringParameters": { "q": "matrix" }
+        "queryStringParameters": { "q": "tom" }
     }
     res = universal(ev, None)
     print(res)

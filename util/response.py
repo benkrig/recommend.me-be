@@ -12,7 +12,7 @@ def generate_response(body):
     """
     try:
         r = {
-            'statusCode': OK,
+            'statusCode': str(OK),
             'body': json.dumps(body),
             'headers': {
                 'Content-Type': 'application/json',
