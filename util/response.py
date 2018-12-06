@@ -15,7 +15,8 @@ def generate_response(body):
             'statusCode': OK,
             'body': json.dumps(body),
             'headers': {
-                'Content-Type': 'application/json'
+                'Content-Type': 'application/json',
+                'Access-Control-Allow-Origin': '*'
             }
         }
         return r
